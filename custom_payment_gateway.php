@@ -158,12 +158,12 @@ function init_custom_gateway_class(){
 				$option_value = unserialize($wp_options[0]->option_value);
 				print_r($option_value);
 				//$login_url = $option_value['login_url'];
-				$login_url = '45.32.253.204:5000/api/deep/login/';
+				$login_url = 'xxxx:5000/api/deep/login/';
 				$apikey = $option_value['merchant_apikey'];
 				$secretkey = $option_value['merchant_secretkey'];
 				$wallet_address = $option_value['wallet_address'];
-				$login_data['apiKey'] = '029bd89c326579733b10b554d2e4119aba43cab7dfeaca6b66ad45649b9a6a';
-				$login_data['apiSecret'] = 'd506c6530db5f8d0d627ce5c6e565630';
+				$login_data['apiKey'] = 'xxx';
+				$login_data['apiSecret'] = 'xxxx';
 				$login_data['wallet_address'] = '';
 				print_r($login_data);
 				$data['email'] = $_POST['billing_email'];
@@ -237,9 +237,9 @@ function init_custom_gateway_class(){
 		$wp_options = $wpdb->get_results("SELECT option_value FROM wp_options WHERE (option_name = 'woocommerce_custom_settings' AND autoload = 'yes')");
 		$option_value = unserialize($wp_options[0]->option_value);
 		//$api_senddata_url = $option_value['api_senddata_url'];
-		$api_senddata_url = 'https://cybersify.tech/birb_apis/payment/order/';
+		$api_senddata_url = 'xxxx/birb_apis/payment/order/';
 		//$api_return_url = $option_value['api_return_url'];
-		$api_return_url = 'https://cybersify.tech/birb_apis/payment/confirm/';
+		$api_return_url = 'xxx/birb_apis/payment/confirm/';
 		$order_id = $data['storeOrderId'];
 		$token = $token;
 		$_SESSION['token'] = $token;
@@ -286,7 +286,7 @@ function init_custom_gateway_class(){
 		$option_value = unserialize($wp_options[0]->option_value);
 		$merchant_add = array('address'=>$option_value['wallet_address']);
 		//$tr_url = @$option_value['api_check_tr'];
-		$tr_url = 'https://cybersify.tech/birb_apis/transaction/';
+		$tr_url = 'xxxx/birb_apis/transaction/';
 		$id = @$res_data->data->_id;
 		$url= $tr_url.$id;
 		$header = array(
